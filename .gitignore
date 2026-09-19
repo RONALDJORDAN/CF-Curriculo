@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Environment and secrets
+.env
+.env.local
+*.key.json
+
+# IDE & OS
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+*.log

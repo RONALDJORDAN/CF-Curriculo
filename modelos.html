@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CF — Modelos de currículo | 10 opções quadradas</title>
+<meta name="description" content="CF — escolha entre 10 modelos de currículo quadrados e caia direto na criação com ele aplicado. Grátis e sem cadastro.">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<header class="site-topo" id="site-topo">
+  <div class="topo-int">
+    <a class="marca" href="index.html">
+      <span class="marca-q">CF</span>
+      <span><b>CF — CURRÍCULO FÁCIL</b><small>MONTE • VISUALIZE • IMPRIMA</small></span>
+    </a>
+    <button class="menu-btn" id="menu-btn" aria-label="Abrir menu">☰</button>
+    <nav class="menu" id="site-menu">
+      <a href="index.html">Início</a>
+      <a href="modelos.html" class="ativo">Modelos</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="criar.html" class="btn btn-amarelo" style="border-color:#000">Crie seu currículo</a>
+    </nav>
+  </div>
+</header>
+
+<!-- MODELOS / SLIDER -->
+<section class="secao" id="modelos">
+  <div class="secao-int">
+    <div class="revelar">
+      <span class="tit-secao"><span class="n">■</span>MODELOS</span>
+      <h2 class="grande">10 MODELOS QUADRADOS</h2>
+      <p class="desc">Arraste ou use as setas. Cada card abre a página de criação já com aquele modelo aplicado.</p>
+    </div>
+    <div class="chips revelar">
+      <button class="chip ativo" data-filtro="todos">Todos</button>
+      <button class="chip" data-filtro="lateral">Com lateral</button>
+      <button class="chip" data-filtro="coluna">Uma coluna</button>
+      <button class="chip" data-filtro="escuro">Escuros</button>
+      <button class="chip" data-filtro="destaque">Destaque</button>
+    </div>
+    <div class="slider-caixa revelar">
+      <div class="slider-janela">
+        <div class="slider-track" id="slider-track">
+          <article class="model-card" data-cat="lateral claro"><div class="prev-wrap" data-modelo="quadrado" data-tema="marrom"></div><div class="info"><b>01 — Quadrado Cheio</b><p>Lateral bege direita, o clássico.</p><a href="criar.html?modelo=quadrado">Usar este →</a></div></article>
+          <article class="model-card" data-cat="lateral escuro"><div class="prev-wrap" data-modelo="faixa" data-tema="amarelo"></div><div class="info"><b>02 — Faixa Esquerda</b><p>Lateral marrom à esquerda.</p><a href="criar.html?modelo=faixa">Usar este →</a></div></article>
+          <article class="model-card" data-cat="lateral escuro"><div class="prev-wrap" data-modelo="lateral-direita" data-tema="marrom"></div><div class="info"><b>03 — Faixa Direita</b><p>Lateral marrom à direita.</p><a href="criar.html?modelo=lateral-direita">Usar este →</a></div></article>
+          <article class="model-card" data-cat="destaque claro"><div class="prev-wrap" data-modelo="topo-amarelo" data-tema="amarelo"></div><div class="info"><b>04 — Topo Amarelo</b><p>Cabeçalho amarelo central.</p><a href="criar.html?modelo=topo-amarelo">Usar este →</a></div></article>
+          <article class="model-card" data-cat="coluna claro"><div class="prev-wrap" data-modelo="bege-limpo" data-tema="bege"></div><div class="info"><b>05 — Bege Limpo</b><p>Uma coluna, visual leve.</p><a href="criar.html?modelo=bege-limpo">Usar este →</a></div></article>
+          <article class="model-card" data-cat="coluna"><div class="prev-wrap" data-modelo="compacto" data-tema="marrom"></div><div class="info"><b>06 — Compacto</b><p>Empilhado, cabe tudo.</p><a href="criar.html?modelo=compacto">Usar este →</a></div></article>
+          <article class="model-card" data-cat="coluna"><div class="prev-wrap" data-modelo="duas-colunas" data-tema="bege"></div><div class="info"><b>07 — Duas Colunas</b><p>Colunas iguais lado a lado.</p><a href="criar.html?modelo=duas-colunas">Usar este →</a></div></article>
+          <article class="model-card" data-cat="lateral claro"><div class="prev-wrap" data-modelo="inverso" data-tema="amarelo"></div><div class="info"><b>08 — Invertido</b><p>Lateral bege à esquerda.</p><a href="criar.html?modelo=inverso">Usar este →</a></div></article>
+          <article class="model-card" data-cat="destaque"><div class="prev-wrap" data-modelo="moldura-dupla" data-tema="marrom"></div><div class="info"><b>09 — Moldura Dupla</b><p>Quadro interno elegante.</p><a href="criar.html?modelo=moldura-dupla">Usar este →</a></div></article>
+          <article class="model-card" data-cat="escuro lateral"><div class="prev-wrap" data-modelo="executivo" data-tema="marrom"></div><div class="info"><b>10 — Executivo</b><p>Escuro com detalhe amarelo.</p><a href="criar.html?modelo=executivo">Usar este →</a></div></article>
+        </div>
+      </div>
+      <div class="slider-nav">
+        <button class="seta" id="slider-prev" aria-label="Anterior">←</button>
+        <button class="seta" id="slider-next" aria-label="Próximo">→</button>
+        <div class="dots" id="slider-dots"></div>
+        <span id="slider-pos">1 / 8</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUAL ESCOLHER -->
+<section class="secao" id="dicas" style="background:#fff;border-top:3px solid #2b1a0e">
+  <div class="secao-int">
+    <div class="revelar">
+      <span class="tit-secao"><span class="n">■</span>DICAS</span>
+      <h2 class="grande">QUAL MODELO ESCOLHER?</h2>
+      <p class="desc">Regra de ouro dos recrutadores: legível primeiro, bonito depois.</p>
+    </div>
+    <div class="passos">
+      <div class="passo revelar"><span class="etiqueta">1º EMPREGO</span><h3>BEGE OU COMPACTO</h3><p>Pouca experiência? Uma coluna limpa valoriza seus cursos. <a href="criar.html?modelo=bege-limpo">Testar →</a></p></div>
+      <div class="passo am revelar"><span class="etiqueta">VAGA FORMAL</span><h3>EXECUTIVO</h3><p>Escritório, banco e estágio: escuro com detalhe amarelo passa seriedade. <a href="criar.html?modelo=executivo">Testar →</a></p></div>
+      <div class="passo ma revelar"><span class="etiqueta">DESTAQUE</span><h3>TOPO AMARELO</h3><p>Vendas e atendimento: cabeçalho amarelo gruda o olho no seu nome. <a href="criar.html?modelo=topo-amarelo">Testar →</a></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta revelar">
+  <h2>GOSTOU DE UM <mark>MODELO?</mark></h2>
+  <p>Clique em “Usar este” no card ou crie do zero. Grátis, sem cadastro, PDF em A4.</p>
+  <a class="btn btn-amarelo" href="criar.html" style="font-size:16px;padding:14px 28px">Crie seu currículo agora →</a>
+</section>
+
+<footer class="rodape-site">
+  <div class="rod-escada-site" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="rod-grade">
+    <div class="rod-col">
+      <h4>■ CF — CURRÍCULO FÁCIL</h4>
+      <p style="font-weight:500">Monte. Visualize. Imprima. Ferramenta em <a href="criar.html" style="color:#ffc400;font-weight:900">criar.html</a>.</p>
+    </div>
+    <div class="rod-col"><h4>■ NAVEGAÇÃO</h4><ul><li><a href="index.html">Início</a></li><li><a href="modelos.html">Modelos</a></li><li><a href="sobre.html">Sobre</a></li></ul></div>
+    <div class="rod-col"><h4>■ MAIS</h4><ul><li><a href="criar.html">Criar currículo</a></li><li><a href="criar.html?modelo=executivo">Modelo executivo</a></li></ul></div>
+    <div class="rod-col"><h4>■ PRIVACIDADE</h4><ul><li>100% no navegador</li><li>Salvo automático</li><li>Nada vai pra servidor</li></ul></div>
+  </div>
+  <div class="rod-base"><span>© 2026 CF — feito para quem quer emprego rápido.</span><span>■ MARROM • AMARELO • BEGE • BRANCO</span></div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

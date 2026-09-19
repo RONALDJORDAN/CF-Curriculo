@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CF — Currículo Fácil | Crie grátis em 2 minutos</title>
+<meta name="description" content="CF — Gerador de currículo gratuito, simples e sem cadastro. Preencha e imprima em PDF A4.">
+<link rel="stylesheet" href="criar.css">
+</head>
+<body>
+
+<!-- FAIXA TOPO AMARELA -->
+<div class="faixa-topo">CF &nbsp;•&nbsp; 100% GRATUITO &nbsp;•&nbsp; SEM CADASTRO &nbsp;•&nbsp; SEM MARCA D'ÁGUA &nbsp;•&nbsp; EXPORTE EM PDF A4</div>
+
+<!-- MENU DO SITE (igual em todas as páginas) -->
+<nav class="menu-site">
+  <a href="index.html">Início</a>
+  <a href="modelos.html">Modelos</a>
+  <a href="sobre.html">Sobre</a>
+  <a href="criar.html" class="atual">■ Crie seu currículo</a>
+</nav>
+
+<header class="topo">
+  <div class="logo">
+    <div class="logo-quadrado">CF</div>
+    <div>
+      <h1>CF — CURRÍCULO FÁCIL</h1>
+      <p>Monte. Visualize. Imprima. Pronto.</p>
+    </div>
+  </div>
+  <nav class="acoes-topo">
+    <button class="btn btn-bege" onclick="carregarExemplo()">Carregar exemplo</button>
+    <button class="btn btn-branco" onclick="limparTudo()">Limpar</button>
+    <button class="btn btn-amarelo" onclick="imprimir()">⬇ Baixar / Imprimir PDF</button>
+  </nav>
+</header>
+
+<!-- HERO QUADRADO -->
+<section class="hero">
+  <div class="hero-bloco hero-marrom">
+    <span class="etiqueta">PASSO 1</span>
+    <h2>PREENCHA</h2>
+    <p>Digite seus dados no painel bege à esquerda.</p>
+  </div>
+  <div class="hero-bloco hero-amarelo">
+    <span class="etiqueta etiqueta-marrom">PASSO 2</span>
+    <h2>VISUALIZE</h2>
+    <p>Veja o currículo se formar ao vivo à direita.</p>
+  </div>
+  <div class="hero-bloco hero-branco">
+    <span class="etiqueta">PASSO 3</span>
+    <h2>IMPRIMA</h2>
+    <p>Clique em PDF e envie para o recrutador.</p>
+  </div>
+</section>
+
+<main class="conteudo">
+
+  <!-- ============ FORMULÁRIO EM 6 ETAPAS ============ -->
+  <section class="painel-form">
+    <div class="wizard">
+      <div class="wz-topo"><strong id="wz-rotulo">Passo 1 de 6</strong><span>Tudo salva sozinho ✓</span></div>
+      <div class="wz-barra">
+        <button type="button" class="wz-item atual" data-passo="1" onclick="irParaPasso(1)"><b>1</b>Cabeçalho</button>
+        <button type="button" class="wz-item" data-passo="2" onclick="irParaPasso(2)"><b>2</b>Histórico</button>
+        <button type="button" class="wz-item" data-passo="3" onclick="irParaPasso(3)"><b>3</b>Formação</button>
+        <button type="button" class="wz-item" data-passo="4" onclick="irParaPasso(4)"><b>4</b>Competências</button>
+        <button type="button" class="wz-item" data-passo="5" onclick="irParaPasso(5)"><b>5</b>Objetivo</button>
+        <button type="button" class="wz-item" data-passo="6" onclick="irParaPasso(6)"><b>6</b>Finalizar</button>
+      </div>
+    </div>
+
+    <div class="passo-form ativo" data-passo="1">
+      <h3 class="titulo-secao"><span class="num">01</span> CABEÇALHO DO CURRÍCULO</h3>
+      <div class="grade-2">
+        <label>Nome completo<input id="f-nome" placeholder="Ex: Ana Marcia" oninput="atualizar()"></label>
+        <label>Cargo desejado<input id="f-cargo" placeholder="Ex: Auxiliar Administrativo" oninput="atualizar()"></label>
+      </div>
+      <div class="grade-2">
+        <label>E-mail<input id="f-email" placeholder="voce@email.com" oninput="atualizar()"></label>
+        <label>Telefone / WhatsApp<input id="f-tel" placeholder="(11) 99999-9999" oninput="atualizar()"></label>
+      </div>
+      <div class="grade-2">
+        <label>Cidade / UF<input id="f-cidade" placeholder="São Paulo / SP" oninput="atualizar()"></label>
+        <label>LinkedIn / Portfólio<input id="f-link" placeholder="linkedin.com/in/voce" oninput="atualizar()"></label>
+      </div>
+    </div>
+
+    <div class="passo-form" data-passo="2">
+      <h3 class="titulo-secao"><span class="num">02</span> HISTÓRICO PROFISSIONAL <button class="btn-mini" onclick="addExp()">+ Adicionar</button></h3>
+      <div id="lista-exp"></div>
+    </div>
+
+    <div class="passo-form" data-passo="3">
+      <h3 class="titulo-secao"><span class="num">03</span> FORMAÇÃO ACADÊMICA <button class="btn-mini" onclick="addEdu()">+ Adicionar</button></h3>
+      <div id="lista-edu"></div>
+    </div>
+
+    <div class="passo-form" data-passo="4">
+      <h3 class="titulo-secao"><span class="num">04</span> COMPETÊNCIAS</h3>
+      <label>Habilidades (separe por vírgula)<input id="f-skills" placeholder="Ex: Excel, Atendimento, Organização, Vendas" oninput="atualizar()"></label>
+    </div>
+
+    <div class="passo-form" data-passo="5">
+      <h3 class="titulo-secao"><span class="num">05</span> OBJETIVO</h3>
+      <label>Objetivo profissional<textarea id="f-resumo" rows="4" placeholder="Ex: Atuar como Auxiliar Administrativo, aplicando 3 anos de experiência em atendimento e Excel." oninput="atualizar()"></textarea></label>
+    </div>
+
+    <div class="passo-form" data-passo="6">
+      <h3 class="titulo-secao"><span class="num">06</span> FINALIZAR</h3>
+      <ul class="resumo-final" id="resumo-final"></ul>
+      <div class="grade-2">
+        <label>Cor do cabeçalho do CV
+          <select id="f-cor" onchange="atualizar()">
+            <option value="marrom">Marrom clássico</option>
+            <option value="amarelo">Amarelo destaque</option>
+            <option value="bege">Bege minimalista</option>
+          </select>
+        </label>
+        <label>Modelo (10 opções)
+          <select id="f-modelo" onchange="atualizar()">
+            <option value="quadrado">01 — Quadrado Cheio</option>
+            <option value="faixa">02 — Faixa Lateral Esquerda</option>
+            <option value="lateral-direita">03 — Faixa Lateral Direita</option>
+            <option value="topo-amarelo">04 — Topo Amarelo Central</option>
+            <option value="bege-limpo">05 — Bege Limpo 1 Coluna</option>
+            <option value="compacto">06 — Compacto Empilhado</option>
+            <option value="duas-colunas">07 — Duas Colunas Iguais</option>
+            <option value="inverso">08 — Invertido Bege Esquerda</option>
+            <option value="moldura-dupla">09 — Moldura Dupla</option>
+            <option value="executivo">10 — Executivo Escuro</option>
+          </select>
+        </label>
+      </div>
+      <button class="btn btn-amarelo btn-grande" onclick="imprimir()">⬇ Baixar / Imprimir PDF em A4</button>
+    </div>
+
+    <div class="wizard-nav">
+      <button class="btn btn-branco" id="wz-voltar" onclick="passoAnterior()">← Voltar</button>
+      <button class="btn btn-amarelo" id="wz-avancar" onclick="proximoPasso()">Avançar →</button>
+    </div>
+  </section>
+
+  <!-- ============ PREVIEW ============ -->
+  <section class="painel-preview">
+    <div class="barra-preview">
+      <strong>■ PRÉVIA</strong>
+      <div>
+        <button class="btn btn-branco btn-peq" onclick="alternarPreview()">⛶ Ampliar</button>
+        <button class="btn btn-marrom btn-peq" onclick="carregarExemplo()">Exemplo</button>
+        <button class="btn btn-amarelo btn-peq" onclick="imprimir()">Imprimir PDF</button>
+      </div>
+    </div>
+
+    <!-- FOLHA DO CV (é isso que sai no PDF) -->
+    <div id="folha" class="folha modelo-quadrado tema-marrom">
+      <div class="cv-topo">
+        <h2 id="p-nome">Seu Nome Aqui</h2>
+        <h4 id="p-cargo">Seu Cargo Desejado</h4>
+        <p id="p-contato" class="cv-contato">email • telefone • cidade</p>
+      </div>
+      <div class="cv-corpo">
+        <div class="cv-col-principal">
+          <h5>■ OBJETIVO</h5>
+          <p id="p-resumo">Escreva seu objetivo profissional em 2-3 linhas.</p>
+          <h5>■ EXPERIÊNCIA</h5>
+          <div id="p-exp"></div>
+          <h5>■ FORMAÇÃO</h5>
+          <div id="p-edu"></div>
+        </div>
+        <aside class="cv-lateral">
+          <h5>■ CONTATO</h5>
+          <p id="p-contato2"></p>
+          <h5>■ HABILIDADES</h5>
+          <div id="p-skills"></div>
+          <div class="cv-selo">FEITO NO<br><b>CF</b></div>
+        </aside>
+      </div>
+    </div>
+    <p class="dica">Dica: no diálogo de impressão, marque <b>“Gráficos de segundo plano”</b> para sair colorido e escolha <b>“Salvar como PDF”</b> em papel <b>A4</b>.</p>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="rod-escada" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="rod-grade">
+    <div class="rod-col rod-marca">
+      <div class="rod-logo">
+        <span class="rod-logo-q">CF</span>
+        <div><b>CF — CURRÍCULO FÁCIL</b><small>MONTE • VISUALIZE • IMPRIMA</small></div>
+      </div>
+      <p>Gratuito, sem cadastro e sem marca d'água. Seus dados ficam só no seu navegador (IndexedDB).</p>
+      <div class="rod-quad"><span></span><span></span><span></span><span></span></div>
+    </div>
+    <div class="rod-col">
+      <h4>■ COMO USAR</h4>
+      <ul>
+        <li><b>01</b> Preencha o painel bege</li>
+        <li><b>02</b> Veja o preview ao vivo</li>
+        <li><b>03</b> Exporte em PDF A4</li>
+      </ul>
+    </div>
+    <div class="rod-col">
+      <h4>■ DESTAQUES</h4>
+      <ul>
+        <li><b>10</b> modelos quadrados</li>
+        <li><b>03</b> cores de cabeçalho</li>
+        <li><b>100%</b> privado e grátis</li>
+      </ul>
+    </div>
+    <div class="rod-col rod-cta">
+      <h4>■ PRONTO?</h4>
+      <p>Escolha o modelo e gere seu PDF agora.</p>
+      <div class="rod-btns">
+        <button class="btn btn-amarelo btn-peq" onclick="imprimir()">⬇ Gerar PDF A4</button>
+        <button class="btn btn-bege btn-peq" onclick="carregarExemplo()">Ver exemplo</button>
+      </div>
+    </div>
+  </div>
+  <div class="rod-base">
+    <span>© 2026 CF — feito para quem quer emprego rápido.</span>
+    <span>■ PRIVACIDADE TOTAL • NADA SAI DO SEU PC</span>
+  </div>
+</footer>
+
+<script src="criar.js"></script>
+</body>
+</html>
