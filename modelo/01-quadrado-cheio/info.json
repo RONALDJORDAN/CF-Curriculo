@@ -1,0 +1,10 @@
+{
+  "id": "quadrado",
+  "numero": "01",
+  "nome": "Quadrado Cheio",
+  "pasta": "01-quadrado-cheio",
+  "classe": "modelo-quadrado",
+  "tema": "marrom",
+  "descricao": "Lateral bege direita, o clássico.",
+  "categoria": ["lateral", "claro"]
+}
